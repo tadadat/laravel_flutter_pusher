@@ -346,12 +346,11 @@ class ConnectionStateChange {
 
 @JsonSerializable()
 class ConnectionError {
-  final String message;
-  final String code;
-  final String exception;
+  final String? message;
+  final String? code;
+  final String? exception;
 
-  ConnectionError(
-      {required this.message, required this.code, required this.exception});
+  ConnectionError({this.message, this.code, this.exception});
 
   factory ConnectionError.fromJson(Map<String, dynamic> json) =>
       _$ConnectionErrorFromJson(json);
